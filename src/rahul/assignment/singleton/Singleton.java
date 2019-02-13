@@ -2,8 +2,11 @@ package rahul.assignment.singleton;
 
 public class Singleton {
     String stringValue;
-    public static Singleton assignString(String value){
-        Singleton singleton=new Singleton();
+    private static Singleton singleton = null; 
+    
+    public static Singleton getInstance(String value){
+        if (singleton == null) 
+            singleton = new Singleton(); 
         singleton.stringValue=value;
         return singleton;
     }
